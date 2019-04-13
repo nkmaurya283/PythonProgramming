@@ -1,0 +1,42 @@
+git important command
+-------------------------------
+1) To delete any commit local and from remote also.
+  i) git reset <2nd last comit id where you have commited>
+  ii)check it is untraced by git status
+  iii) git push origin master -f  -> to force update from remote or delete, we can change master to any other branch fro updation(be careful)
+  iv) take last commit id command-> git revert <commit id>
+  V) git push
+
+
+2) GIT Branches
+==========================
+i) git branch  ->  to list all the branch
+ii) git branch <branch name>  to create new branch
+iii) git checkout thristy  ->To work on this branch and add and commit locally do not push, and merge locally with master
+iv) For merging the changes first go to the master branch-> git checkout master and type command ->git merge  <branch name>
+v) To push any branch -> git push --set-upstream origin thristy
+vi) To create any branch used actively command is-> git checkout -b dummny    b is for branch
+vii) To delete any branch locally -> git branch -d Dummy    d stands for delete
+viii) To delete any branch from remote->> git push origin --delete <branch_name>
+
+3)GIT Undoing/reverting/reseting  the changes
+==========================
+i) Undoing the changes before comitting command is -> git checkout <file_name>   (before Adding in staging area)
+   If we have added by add command than to undo from staging area command -> git reset <file or folder name>
+ii) if we have many file changed than for undo -> git checkout -- .      dot operator
+iii) After commititng the changes for undoing we revert > git revert <last_commited_id>
+iv) git revert -n <any_commited_id>   -> It need to be committed while in step iii it not need to be commited ,it automatically committed.
+v) If we want to undo all the chnages that made after a particular commit than we use HARD reset ->> git reset --hard <commit_id_which _we want to uddo_changes made after>
+   Be careful while running this command because it will undo all your changes.
+vi) if we have added the to the staging area by-> git add <filename> command and not committed yet tha we can undo it 
+   by command ->  git reset <file name>
+
+4) If in case your .gitIgnore is not working
+Run this command
+->git rm -r --cached .
+-> git add .
+-> git commit -m ".gitignore is now working"
+
+
+
+  
